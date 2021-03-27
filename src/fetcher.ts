@@ -29,7 +29,7 @@ const TOKEN_DATA_CACHE: {
   [chainId: number]: { [address: string]: Currency }
 } = {
   [ChainId.MAINNET]: {
-    '0xE0B7927c4aF23765Cb51314A0E0521A9645F0E2A': { decimals: 9, symbol: 'DGD', name: 'DigixDAO' } // DGD
+    '0x949bed886c739f1a3273629b3320db0c5024c719': { decimals: 9, symbol: 'AMIS', name: 'AMIS' } // AMIS
   }
 }
 
@@ -391,7 +391,7 @@ export abstract class Fetcher {
       })
     }
     return {
-      name: 'DXswap default token list',
+      name: 'Amiswap default token list',
       tokens: tokenList
     }
   }
@@ -415,7 +415,7 @@ export abstract class Fetcher {
     if (chainId == ChainId.MAINNET) {
       tokenListURL = 'https://tokens.coingecko.com/uniswap/all.json' // coingecko list used for mainnet
     } else {
-      tokenListURL = 'https://tokens.honeyswap.org' // honeyswap list used for xdai
+      tokenListURL = 'https://raw.githubusercontent.com/erc20-amis/token-list/master/xDaiChainId100.json' // amiswap list used for xdai
     }
     const response = await fetch(tokenListURL)
     if (!response.ok) {
